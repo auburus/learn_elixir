@@ -6,6 +6,7 @@ all:
 	@printf "    run           Run local dev environment\n"
 	@printf "    start_db\n"
 	@printf "    stop_db\n"
+	@printf "    update        Update dependencies\n"
 
 .PHONY: setenv
 setenv:
@@ -26,3 +27,7 @@ start_db:
 .PHONY: stop_db
 stop_db:
 	(docker stop postgres && docker rm postgres ) || true
+
+.PHONY: update
+update:
+	mix deps.update --all
