@@ -9,7 +9,7 @@ run: start_db
 	mix phx.server
 
 start_db:
-	(docker ps | grep postgres) || docker run -d --network=host -e POSTGRES_PASSWORD=postgres --name postgres postgres
+	(docker ps | grep postgres) || ((docker rm postgres || true ) && docker run -d --network=host -e POSTGRES_PASSWORD=postgres --name postgres postgres)
 	@sleep 1
 	mix ecto.create
 
