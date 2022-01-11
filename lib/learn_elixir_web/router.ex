@@ -8,6 +8,7 @@ defmodule LearnElixirWeb.Router do
     plug :put_root_layout, {LearnElixirWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug LearnElixirWeb.Plugs.Locale, "en"
   end
 
   pipeline :api do

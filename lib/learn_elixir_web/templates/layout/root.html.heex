@@ -26,6 +26,6 @@
       </section>
     </header>
     <%= @inner_content %>
-    <%= Phoenix.View.render(LearnElixirWeb.PageView, "test.html", message: "New message") %>
+    <%= Phoenix.View.render(LearnElixirWeb.PageView, "test.html", message: "Locale provided #{@locale}") %>
   </body>
 </html>
